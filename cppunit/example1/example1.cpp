@@ -1,20 +1,22 @@
 #include "example1.h"
 
+// For a list of existing assertion types, check: http://cppunit.sourceforge.net/doc/cvs/group___assertions.html
 class exampleTests{
     public:
         static bool test() {
-            testStringsMinLength();
-            testStringsMaxLength();
+            testAssert();
+            testAssertNegated();
             return true;
         }
     private:
-        static bool testStringsMinLength() {
+        static bool testAssert() {
             // Assertions that a condition is true
-            // For more assertion types, check: http://cppunit.sourceforge.net/doc/cvs/group___assertions.html
-            CPPUNIT_ASSERT(! 1 == 1);
+            CPPUNIT_ASSERT(1 == 1);
             return true;
         }
-        static bool testStringsMaxLength() {
+        static bool testAssertNegated() {
+            // Check that 2 is NOT smaller than 1
+            CPPUNIT_ASSERT(! 2 < 1);
             return true;
         }
 };
@@ -22,15 +24,19 @@ class exampleTests{
 class moreExampleTests{
     public:
         static bool test() {
-            testStringsContent1();
-            testStringsContent2();
+            testAssertEqual();
+            testAssertAssertionFail();
             return true;
         }
     private:
-        static bool testStringsContent1() {
+        static bool testAssertEqual() {
+            // Asser that two numbers are equal
+            CPPUNIT_ASSERT_EQUAL(5,5);
             return true;
         }
-        static bool testStringsContent2() {
+        static bool testAssertAssertionFail() {
+            // Assert that saying "5 is bigger than 8" is a false
+            CPPUNIT_ASSERT_ASSERTION_FAIL(5 > 8);
             return true;
         }
 };

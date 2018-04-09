@@ -1,4 +1,4 @@
-#include "example1.h"
+#include "example1_simpleAssertions.h"
 
 // For a list of existing assertion types, check: http://cppunit.sourceforge.net/doc/cvs/group___assertions.html
 //

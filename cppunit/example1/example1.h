@@ -30,12 +30,17 @@ class MyExampleModuleTests : public CppUnit::TestFixture
 
 	public:
 
+    // The setUp process if for initializing fixtures and preparing everything
+    // that we need before test execution
 	void setUp()
 	{
 		std::cout << "Setting up" << std::endl;
         number1 = 1;
 	}
 
+    // The teardown process is for performing clean-up after the test. If we
+    // had allocated memory during setUp, this would be the place for freeing
+    // it
 	void tearDown()
 	{
 		std::cout << "Finished" << std::endl;

@@ -1,6 +1,11 @@
 #include "example1.h"
 
 // For a list of existing assertion types, check: http://cppunit.sourceforge.net/doc/cvs/group___assertions.html
+//
+
+// Our first group of tests. In this one, two types of assertions are shown,
+// testAssert and testAssertNegated. As it can be seen, one after the other in
+// the test() method of the class.
 class exampleTests{
     public:
         static bool test() {
@@ -21,6 +26,7 @@ class exampleTests{
         }
 };
 
+// Our second group of tests, this time with two additional types of assertions
 class moreExampleTests{
     public:
         static bool test() {
@@ -30,7 +36,7 @@ class moreExampleTests{
         }
     private:
         static bool testAssertEqual() {
-            // Asser that two numbers are equal
+            // Assert that two numbers are equal
             CPPUNIT_ASSERT_EQUAL(5,5);
             return true;
         }
